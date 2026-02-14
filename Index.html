@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentýnka pro Nikol ❤️</title>
+  <style>
+    body {
+      background: #ffd6e7;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+      width: 350px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background: #ff4d88;
+      color: white;
+      left: 40px;
+    }
+
+    #no {
+      background: #ddd;
+      right: 40px;
+    }
+
+    .yay {
+      display: none;
+    }
+
+    .yay h1 {
+      font-size: 28px;
+    }
+
+    .yay img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" id="question">
+    <h1>Nikol, budeš moje valentýnka?</h1>
+
+    <div class="buttons">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+
+  <div class="card yay" id="yay">
+    <h1>YAY!!!</h1>
+    <img
+      src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+      alt="YAY GIF"
+    />
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const question = document.getElementById("question");
+    const yay = document.getElementById("yay");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 60 - 30;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      question.style.display = "none";
+      yay.style.display = "block";
+    });
+  </script>
+</body>
+</html>
